@@ -8,6 +8,10 @@ var createTaskHandler = function() {
     var taskNameInput = document.querySelector("input[name='task-name']").value;
     var taskTypeInput = document.querySelector("select[name='task-type']").value;
 
+    if (!taskNameInput || !taskTypeInput) {
+      alert("You need to fill out the task form!");
+      return false;
+      }
 
     // create list item
     var listItemEl = document.createElement("li");
@@ -24,6 +28,9 @@ var createTaskHandler = function() {
 
     // add entire list item to list
     tasksToDoEl.appendChild(listItemEl);
+    // check if input values are empty strings
+    
+    formEl.reset();
   }
 
 
